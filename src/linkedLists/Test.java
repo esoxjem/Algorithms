@@ -8,14 +8,17 @@ public class Test {
 		LinkedListNode q = new LinkedListNode(6);
 		LinkedListNode r = new LinkedListNode(7);
 		LinkedListNode s = new LinkedListNode(8);
-
 		LinkedList list = new LinkedList();
+
 		list.setHead(q);
 		
 		list.insertAtHead(p);
 		list.insertAtEnd(r);
 		list.insertInList(s, 4);
 
+		list.printList();
+		LinkedListNode deletedNode = list.deleteFromList(4);
+		System.out.println("\ndeleted node is " + deletedNode.getData());
 		list.printList();
 	}
 }
