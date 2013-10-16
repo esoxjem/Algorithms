@@ -13,7 +13,10 @@ public class Test {
 		list.setHead(b);
 		list.insertAtHead(a);
 		list.insertAtEnd(d);
-		list.insertInList(c, 4);
+		list.insertInList(c, 3);
+		
+		list.deleteFromMiddle(5);
+		
 		list.printList();
 		
 	}
