@@ -73,18 +73,46 @@ public class DoublyLinkedList {
 			}
 		}
 	}
-	
+
 	// prints the list
-	public void printList(){
-		if(head == null){
+	public void printList() {
+		if (head == null) {
 			System.out.println("empty list");
 		} else {
 			DLLNode current = head;
 			System.out.print("-> ");
-			while(current != null){
+			while (current != null) {
 				System.out.print(current.getData() + " ");
 				current = current.getNext();
 			}
 		}
+	}
+
+	// deletes first node
+	public DLLNode deleteFirst() {
+		if (head == null) {
+			System.out.println("empty list");
+			return null;
+		}
+		DLLNode temp = head;
+		head = temp.getNext();
+		head.setPrevious(null);
+		return temp;
+	}
+
+	// deletes last node
+	public DLLNode deleteLast() {
+		if (head == null) {
+			System.out.println("emty lisy");
+			return null;
+		}
+		DLLNode prev = null, current = head;
+		while (current.getNext() != null) { // traverse to tail, tail - 1
+			prev = current;
+			current = current.getNext();
+		}
+		prev.setNext(null);
+		current.setPrevious(null);
+		return current;
 	}
 }
