@@ -136,17 +136,17 @@ public class DoublyLinkedList {
 		}
 		DLLNode prev = head;
 		int count = 1;
-		while (count < position - 1) {
+		while (count < position - 1) { //traverse till prev = position - 1
 			prev = prev.getNext();
 			count++;
 		}
 		DLLNode current = prev.getNext();
 		DLLNode next = current.getNext();
 		prev.setNext(next);
-		if (next != null)
+		if (next != null) //avoids null pointer exception
 			next.setPrevious(prev);
 		current.setNext(null);
-		if(current != null)
+		if(current != null) //avoids null pointer exception
 			current.setPrevious(null);
 		return current;
 	}
