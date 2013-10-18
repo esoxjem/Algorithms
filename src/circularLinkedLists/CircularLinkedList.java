@@ -2,9 +2,10 @@ package circularLinkedLists;
 
 public class CircularLinkedList {
 
-	CLLNode head;
+	private CLLNode head;
 	
 	public void setHead(CLLNode head) {
+		head.setNext(head);
 		this.head = head;
 	}
 	
@@ -33,11 +34,11 @@ public class CircularLinkedList {
 			while(current != null){
 				System.out.print(current.getData() + " ");
 				current = current.getNext();
-				if(current == null){
+				if(current == head){
 					break;
 				}
 			}
-			System.out.println("(" + current.getData() + ")head" );
+			System.out.println("(" + current.getData() + ")head " );
 		}
 	}
 	
@@ -48,11 +49,28 @@ public class CircularLinkedList {
 			head = newNode;
 		} else {
 			CLLNode current = head;
-			while(current.getNext() != head){ // traverse to last node
+			while(current.getNext() != head){ // traverse to the last node
 				current = current.getNext();
 			}
 			current.setNext(newNode);
 			newNode.setNext(head);
+		}
+	}
+	
+	//insert node at the beginning
+	public void insertAtHead(CLLNode newNode){
+		if(head == null){
+			newNode.setNext(newNode);
+			head = newNode;
+		}
+		else {
+			CLLNode current = head;
+			while(current.getNext() != head){ // traverse to the last node
+				current = current.getNext();
+			}
+			current.setNext(newNode);
+			newNode.setNext(head);
+			head = newNode;
 		}
 	}
 }
