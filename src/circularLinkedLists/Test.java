@@ -14,6 +14,10 @@ public class Test {
 		list.insertAtHead(a);
 		list.insetAtEnd(c);
 		list.insertInList(d, 4);
+		
+		list.printList();
+		CLLNode deletedNode = list.deleteFirst();
+		System.out.println("deleted node is :" + deletedNode.getData());
 		list.printList();
 	}
 }

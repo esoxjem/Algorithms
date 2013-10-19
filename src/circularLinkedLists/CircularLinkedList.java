@@ -10,15 +10,15 @@ public class CircularLinkedList {
 	}
 
 	// counts the number of nodes
-	public int circularListLength() {
-		int length = 0;
+	public int listLength() {
+		if (head == null) {
+			return 0;
+		}
+		int length = 1;
 		CLLNode current = head;
-		while (current != null) {
+		while (current.getNext() != head) {
 			current = current.getNext();
 			length++;
-			if (current == head) { // exit condition
-				break;
-			}
 		}
 		return length;
 	}
@@ -78,7 +78,7 @@ public class CircularLinkedList {
 			newNode.setNext(newNode);
 			head = newNode;
 		} else {
-			int size = circularListLength();
+			int size = listLength();
 			if (position < 1 || position > size + 1) {
 				System.out.println("invalid position");
 			} else if (position == 1) { // always handled separately, as head
@@ -109,6 +109,10 @@ public class CircularLinkedList {
 		if (head == null) {
 			System.out.println("list is empty");
 			return null;
+		} else if (listLength() == 1) {
+			CLLNode temp = head;
+			head = null;
+			return temp;
 		}
 		CLLNode tail = head;
 		while (tail.getNext() != head) {
@@ -117,7 +121,27 @@ public class CircularLinkedList {
 		CLLNode temp = head;
 		head = head.getNext();
 		tail.setNext(head);
-		temp.setNext(null); //isolate the node
+		temp.setNext(null); // isolate the node
 		return temp;
+	}
+
+	// deletes last node
+	public CLLNode deleteLast() {
+		if (head == null) {
+			System.out.println("list is empty");
+			return null;
+		} else if (listLength() == 1) {
+			CLLNode temp = head;
+			head = null;
+			return temp;
+		}
+		CLLNode prev = null, current = head;
+		while (current.getNext() != head) {
+			prev = current;
+			current = current.getNext();
+		}
+		prev.setNext(head);
+		current.setNext(null); // isolate node
+		return current;
 	}
 }

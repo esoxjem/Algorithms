@@ -15,7 +15,7 @@ public class Test {
 		list.insertAtEnd(d);
 		list.insertInList(c, 3);
 		
-		list.deleteFromMiddle(5);
+		list.deleteFromMiddle(4);
 		
 		list.printList();
 		
