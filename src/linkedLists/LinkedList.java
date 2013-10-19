@@ -90,6 +90,7 @@ public class LinkedList {
 		}
 		LinkedListNode temp = head;
 		head = head.getNext();
+		temp.setNext(null); // isolate the node
 		return temp;
 	}
 
@@ -135,6 +136,7 @@ public class LinkedList {
 		}
 		current = prev.getNext();
 		prev.setNext(current.getNext()); // link node at position - 1 to position + 1
+		current.setNext(null); // isolate the node
 		return current;
 	}
 }

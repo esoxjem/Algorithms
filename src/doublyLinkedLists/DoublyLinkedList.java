@@ -95,7 +95,7 @@ public class DoublyLinkedList {
 			return null;
 		}
 		DLLNode temp = head;
-		head = temp.getNext();
+		head = head.getNext();
 		head.setPrevious(null);
 		temp.setNext(null);
 		return temp;

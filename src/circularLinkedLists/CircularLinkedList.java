@@ -103,4 +103,21 @@ public class CircularLinkedList {
 			}
 		}
 	}
+
+	// deletes first node
+	public CLLNode deleteFirst() {
+		if (head == null) {
+			System.out.println("list is empty");
+			return null;
+		}
+		CLLNode tail = head;
+		while (tail.getNext() != head) {
+			tail = tail.getNext();
+		}
+		CLLNode temp = head;
+		head = head.getNext();
+		tail.setNext(head);
+		temp.setNext(null); //isolate the node
+		return temp;
+	}
 }
