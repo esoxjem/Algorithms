@@ -17,8 +17,11 @@ public class Test {
 		list.insertInList(s, 4);
 
 		list.printList();
-		LinkedListNode deletedNode = list.deleteFromList(4);
-		System.out.println("\ndeleted node is " + deletedNode.getData());
-		list.printList();
+		
+		MiscOperations op = new MiscOperations();
+		
+		System.out.println("\n nth node from the end " + op.nthNodeFromEnd2(list, 1).getData());
+		
+		
 	}
 }
