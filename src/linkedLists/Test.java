@@ -20,7 +20,7 @@ public class Test {
 		
 		MiscOperations op = new MiscOperations();
 		
-		System.out.println("\n nth node from the end " + op.nthNodeFromEnd2(list, 1).getData());
+		System.out.println("\n nth node from the end " + op.nthNodeFromEnd2(list, 2).getData());
 		
 		
 	}
