@@ -40,6 +40,7 @@ public class CycleDetection {
 		
 		// if cycle exists
 		if(cyclic){
+			slowPtr = list.getHead();
 			while(slowPtr != fastPtr){
 				slowPtr = slowPtr.getNext();
 				fastPtr = fastPtr.getNext();

@@ -22,6 +22,8 @@ public class Test {
 		
 		System.out.println("\n nth node from the end " + op.nthNodeFromEnd2(list, 2).getData());
 		
+		LinkedList reversed = op.reverseList(list);
+		reversed.printList();
 		
 	}
 }
