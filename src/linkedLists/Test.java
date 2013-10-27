@@ -18,12 +18,20 @@ public class Test {
 
 		list.printList();
 		
-		MiscOperations op = new MiscOperations();
+		LinkedListNode a = new LinkedListNode(1);
 		
-		System.out.println("\n nth node from the end " + op.nthNodeFromEnd2(list, 2).getData());
 		
-		LinkedList reversed = op.reverseList(list);
-		reversed.printList();
+		LinkedList list2 = new LinkedList();
+		list2.insertAtEnd(a);
+		
+		list2.insertAtEnd(r);
+		
+		System.out.println();
+		list2.printList();
+		
+		MergedLL mll = new MergedLL();
+		LinkedListNode interect = mll.findIntersectingNode(list, list2);
+		System.out.println("intersection at " + interect.getData());
 		
 	}
 }

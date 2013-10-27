@@ -1,6 +1,6 @@
 package linkedLists;
 
-public class MiscOperations {
+public class NthNodeFromEnd {
 
 	// in two scans: O(n)
 	public LinkedListNode nthNodeFromEnd(LinkedList list, int n) {
@@ -39,17 +39,5 @@ public class MiscOperations {
 			return nth;
 		}
 		return null;
-	}
-	
-	public LinkedList reverseList(LinkedList list){
-		LinkedListNode prev = null, current = list.getHead(), next;
-		while(current != null){
-			next = current.getNext();
-			current.setNext(prev);
-			prev = current;
-			current = next;
-		}
-		list.setHead(prev);
-		return list;
 	}
 }

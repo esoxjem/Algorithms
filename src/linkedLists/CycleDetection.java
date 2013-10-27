@@ -49,4 +49,34 @@ public class CycleDetection {
 		}
 		return null;
 	}
+	
+	// find length of the loop
+	public int findLoopLength(LinkedList list){
+		boolean cyclic = false;
+		int length = 0;
+		LinkedListNode slowPtr = list.getHead(), fastPtr = list.getHead();
+		while(fastPtr != null && slowPtr != null){
+			fastPtr = fastPtr.getNext();
+			if(fastPtr == slowPtr){
+				cyclic = true;
+				break;
+			}
+			if(fastPtr == null){
+				break;
+			}
+			fastPtr = fastPtr.getNext();
+			if(fastPtr == slowPtr){
+				cyclic = true;
+				break;
+			}
+			slowPtr = slowPtr.getNext();
+		}
+		if(cyclic){
+			while(slowPtr != fastPtr){
+				slowPtr = slowPtr.getNext();
+				length++;
+			}
+		}
+		return length;
+	}
 }

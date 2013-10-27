@@ -60,7 +60,8 @@ public class LinkedList {
 			} else { // inserting in the middle or at the end
 				LinkedListNode prev = head;
 				int count = 1;
-				while (count < position - 1) { // traverse till prev = position - 1
+				while (count < position - 1) { // traverse till prev = position
+												// - 1
 					prev = prev.getNext();
 					count++;
 				}
@@ -99,30 +100,28 @@ public class LinkedList {
 		if (head == null) {
 			System.out.println("list is empty");
 			return null;
-		} 
+		}
 		if (listLength() == 1) {
 			LinkedListNode temp = head;
 			head = head.getNext();
 			return temp;
 		}
-		LinkedListNode prev = null, 
-					   current = head;
-		while(current.getNext() != null){ //traverse till prev = tail - 1
+		LinkedListNode prev = null, current = head;
+		while (current.getNext() != null) { // traverse till prev = tail - 1
 			prev = current;
 			current = current.getNext();
 		}
 		prev.setNext(null);
 		return current;
 	}
-	
-	// deletes node from the middle of the list 
-	public LinkedListNode deleteFromList(int position){
+
+	// deletes node from the middle of the list
+	public LinkedListNode deleteFromList(int position) {
 		int size = listLength();
-		if(position > size || position < 1){
+		if (position > size || position < 1) {
 			System.out.println("invalid position");
 			return null;
-		}
-		else if(position == 1){ 
+		} else if (position == 1) {
 			LinkedListNode temp = head;
 			head = head.getNext();
 			return temp;
@@ -130,12 +129,13 @@ public class LinkedList {
 		LinkedListNode prev, current;
 		prev = head;
 		int count = 1;
-		while(count < position - 1){ // traverse till prev = position - 1
-			prev = prev.getNext();	
+		while (count < position - 1) { // traverse till prev = position - 1
+			prev = prev.getNext();
 			count++;
 		}
 		current = prev.getNext();
-		prev.setNext(current.getNext()); // link node at position - 1 to position + 1
+		prev.setNext(current.getNext()); // link node at position - 1 to
+											// position + 1
 		current.setNext(null); // isolate the node
 		return current;
 	}
