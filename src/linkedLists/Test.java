@@ -31,10 +31,13 @@ public class Test {
 		
 		MergedLL mll = new MergedLL();
 		LinkedListNode interect = mll.findIntersectingNode(list, list2);
-		System.out.println("intersection at " + interect.getData());
+		System.out.println("\nintersection at " + interect.getData());
 		
 		PrintReverse pr = new PrintReverse();
 		pr.printReverse(p);
+		
+		LLMiddle llm = new LLMiddle();
+		System.out.println("\nmiddle = " + llm.getListMiddle(list2).getData());
 		
 	}
 }
