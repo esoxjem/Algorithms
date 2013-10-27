@@ -33,5 +33,8 @@ public class Test {
 		LinkedListNode interect = mll.findIntersectingNode(list, list2);
 		System.out.println("intersection at " + interect.getData());
 		
+		PrintReverse pr = new PrintReverse();
+		pr.printReverse(p);
+		
 	}
 }
