@@ -9,12 +9,13 @@ public class Test {
 		LinkedListNode r = new LinkedListNode(7);
 		LinkedListNode s = new LinkedListNode(8);
 		LinkedList list = new LinkedList();
-
+		
 		list.setHead(q);
 		
 		list.insertAtHead(p);
 		list.insertAtEnd(r);
 		list.insertInList(s, 4);
+		list.insertAtEnd(new LinkedListNode(0));
 
 		list.printList();
 		
@@ -37,7 +38,10 @@ public class Test {
 		pr.printReverse(p);
 		
 		LLMiddle llm = new LLMiddle();
-		System.out.println("\nmiddle = " + llm.getListMiddle(list2).getData());
+		System.out.println("\nmiddle = " + llm.getListMiddle(list).getData());
+		
+		OddEvenLL oel = new OddEvenLL();
+		oel.OddorEven(list2);
 		
 	}
 }
