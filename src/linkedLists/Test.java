@@ -4,44 +4,43 @@ public class Test {
 
 	public static void main(String[] args) {
 
-		LinkedListNode p = new LinkedListNode(5);
-		LinkedListNode q = new LinkedListNode(6);
-		LinkedListNode r = new LinkedListNode(7);
+		LinkedListNode p = new LinkedListNode(2);
+		LinkedListNode q = new LinkedListNode(4);
+		LinkedListNode r = new LinkedListNode(6);
 		LinkedListNode s = new LinkedListNode(8);
+		
 		LinkedList list = new LinkedList();
-		
 		list.setHead(q);
-		
 		list.insertAtHead(p);
 		list.insertAtEnd(r);
 		list.insertInList(s, 4);
-		list.insertAtEnd(new LinkedListNode(0));
-
+		
 		list.printList();
 		
 		LinkedListNode a = new LinkedListNode(1);
-		
+		LinkedListNode b = new LinkedListNode(3);
+		LinkedListNode c = new LinkedListNode(5);
+		LinkedListNode d = new LinkedListNode(7);
 		
 		LinkedList list2 = new LinkedList();
 		list2.insertAtEnd(a);
-		
-		list2.insertAtEnd(r);
+		list2.insertAtEnd(b);
+		list2.insertAtEnd(c);
+		list2.insertAtEnd(d);		
 		
 		System.out.println();
 		list2.printList();
 		
 		MergedLL mll = new MergedLL();
-		LinkedListNode interect = mll.findIntersectingNode(list, list2);
-		System.out.println("\nintersection at " + interect.getData());
+		LinkedListNode sorted = mll.mergeSortedLists(p, a);
 		
-		PrintReverse pr = new PrintReverse();
-		pr.printReverse(p);
-		
-		LLMiddle llm = new LLMiddle();
-		System.out.println("\nmiddle = " + llm.getListMiddle(list).getData());
-		
-		OddEvenLL oel = new OddEvenLL();
-		oel.OddorEven(list2);
+		System.out.println("");
+
+		while(sorted != null){
+			System.out.print(sorted.getData() + " ");
+			sorted = sorted.getNext();
+		}
+
 		
 	}
 }

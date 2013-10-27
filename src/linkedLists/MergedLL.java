@@ -2,6 +2,26 @@ package linkedLists;
 
 public class MergedLL {
 
+	// merges two sorted lists in sorted order
+	public LinkedListNode mergeSortedLists(LinkedListNode head1, LinkedListNode head2){
+		if(head1 == null) return head2;
+		if(head2 == null) return head1;
+		
+		LinkedListNode sortedList = null;
+
+			if(head1.getData() < head2.getData()){
+				sortedList = head1;
+				sortedList.setNext(mergeSortedLists(head1.getNext(), head2));			
+			}
+			else{
+				sortedList =head2;
+				sortedList.setNext(mergeSortedLists(head1, head2.getNext()));
+			}
+			return sortedList;
+
+	}
+	
+	// finds the intersecting node of two intersecting linked lists
 	public LinkedListNode findIntersectingNode(LinkedList list1,
 			LinkedList list2) {
 		LinkedListNode head1 = list1.getHead(), head2 = list2.getHead();
