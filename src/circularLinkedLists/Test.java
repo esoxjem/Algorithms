@@ -7,6 +7,7 @@ public class Test {
 		CLLNode b = new CLLNode(2);
 		CLLNode c = new CLLNode(3);
 		CLLNode d = new CLLNode(4);
+		CLLNode e = new CLLNode(5);
 		
 		CircularLinkedList list = new CircularLinkedList();
 		
@@ -14,10 +15,14 @@ public class Test {
 		list.insertAtHead(a);
 		list.insetAtEnd(c);
 		list.insertInList(d, 4);
+		list.insetAtEnd(e);
 		
 		list.printList();
-		CLLNode deletedNode = list.deleteFirst();
-		System.out.println("deleted node is :" + deletedNode.getData());
+		
+		SplitLists sl = new SplitLists();
+		sl.split(list);
+		
 		list.printList();
+		
 	}
 }

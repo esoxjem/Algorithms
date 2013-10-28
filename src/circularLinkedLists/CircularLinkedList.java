@@ -8,6 +8,10 @@ public class CircularLinkedList {
 		head.setNext(head);
 		this.head = head;
 	}
+	
+	public CLLNode getHead() {
+		return head;
+	}
 
 	// counts the number of nodes
 	public int listLength() {
