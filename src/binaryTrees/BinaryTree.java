@@ -1,5 +1,7 @@
 package binaryTrees;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class BinaryTree {
@@ -7,7 +9,7 @@ public class BinaryTree {
 	// recursive preOrder traversal
 	public void preOrder(BinaryTreeNode root) {
 		if (root != null) {
-			System.out.print(root.getData());
+			System.out.print(root.getData() + " ");
 			preOrder(root.getLeft());
 			preOrder(root.getRight());
 		}
@@ -22,7 +24,7 @@ public class BinaryTree {
 		Stack<BinaryTreeNode> stack = new Stack<BinaryTreeNode>();
 		while (true) {
 			while (root != null) {
-				System.out.println(root.getData());
+				System.out.print(root.getData() + " ");
 				stack.push(root);
 				root = root.getLeft();
 			}
@@ -38,7 +40,7 @@ public class BinaryTree {
 	public void inOrder(BinaryTreeNode root) {
 		if (root != null) {
 			inOrder(root.getLeft());
-			System.out.println(root.getData());
+			System.out.print(root.getData() + " ");
 			inOrder(root.getRight());
 		}
 	}
@@ -59,7 +61,7 @@ public class BinaryTree {
 			}
 
 			root = stack.pop();
-			System.out.println(root.getData());
+			System.out.print(root.getData() + " ");
 			root = root.getRight();
 		}
 	}
@@ -69,7 +71,7 @@ public class BinaryTree {
 		if (root != null) {
 			postOrder(root.getLeft());
 			postOrder(root.getRight());
-			System.out.println(root.getData());
+			System.out.print(root.getData() + " ");
 		}
 	}
 
@@ -87,11 +89,13 @@ public class BinaryTree {
 				root = root.getLeft();
 			} else if (stack.isEmpty()) {
 				break;
-			} else if (stack.peek().getRight() == null) { // if there is no right child
+			} else if (stack.peek().getRight() == null) { // if there is no
+															// right child
 				root = stack.pop();
-				System.out.println(root.getData());
-				if (root == stack.peek().getRight()) {
-					System.out.println(stack.peek().getData());
+				System.out.print(root.getData() + " ");
+				if (root == stack.peek().getRight()) { // if returning from
+														// right child
+					System.out.print(stack.peek().getData() + " ");
 					stack.pop();
 				}
 			}
@@ -101,4 +105,26 @@ public class BinaryTree {
 				root = null;
 		}
 	}
+
+	// level order traversal
+	public void levelOrder(BinaryTreeNode root) {
+		if (root == null)
+			return;
+
+		Queue<BinaryTreeNode> level = new LinkedList<BinaryTreeNode>();
+		level.add(root);
+		BinaryTreeNode node;
+
+		while (!level.isEmpty()) {
+			node = level.poll();
+			System.out.print(node.getData() + " ");
+			if (node.getLeft() != null)
+				level.add(node.getLeft());
+			if (node.getRight() != null)
+				level.add(node.getRight());
+
+		}
+
+	}
+
 }

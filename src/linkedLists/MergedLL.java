@@ -3,24 +3,47 @@ package linkedLists;
 public class MergedLL {
 
 	// merges two sorted lists in sorted order
-	public LinkedListNode mergeSortedLists(LinkedListNode head1, LinkedListNode head2){
-		if(head1 == null) return head2;
-		if(head2 == null) return head1;
-		
+	public LinkedListNode mergeSortedLists(LinkedListNode head1,
+			LinkedListNode head2) {
+		if (head1 == null)
+			return head2;
+		if (head2 == null)
+			return head1;
+
 		LinkedListNode sortedList = null;
 
-			if(head1.getData() < head2.getData()){
-				sortedList = head1;
-				sortedList.setNext(mergeSortedLists(head1.getNext(), head2));			
-			}
-			else{
-				sortedList =head2;
-				sortedList.setNext(mergeSortedLists(head1, head2.getNext()));
-			}
-			return sortedList;
+		if (head1.getData() < head2.getData()) {
+			sortedList = head1;
+			sortedList.setNext(mergeSortedLists(head1.getNext(), head2));
+		} else {
+			sortedList = head2;
+			sortedList.setNext(mergeSortedLists(head1, head2.getNext()));
+		}
+		return sortedList;
 
 	}
-	
+
+	// merge without recursion
+	public void mergeTwoLists(LinkedListNode l1, LinkedListNode l2) {
+		LinkedListNode cur = null;
+		while (l1 != null && l2 != null) {
+
+			if (l1.getData() <= l2.getData()) {
+				cur = l1;
+				l1 = l1.getNext();
+			} else {
+				cur = l2;
+				l2 = l2.getNext();
+			}
+			cur = cur.getNext();
+		}
+		if (l1 != null) {
+			cur.setNext(l1);
+		} else {
+			cur.setNext(l2);
+		}
+	}
+
 	// finds the intersecting node of two intersecting linked lists
 	public LinkedListNode findIntersectingNode(LinkedList list1,
 			LinkedList list2) {
