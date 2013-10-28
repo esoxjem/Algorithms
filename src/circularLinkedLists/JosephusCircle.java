@@ -1,5 +1,7 @@
 package circularLinkedLists;
-
+/**
+ * Doesn't work. need to fix
+ * */
 public class JosephusCircle {
 
 	// elect leader by eliminating every Mth person from the circle
