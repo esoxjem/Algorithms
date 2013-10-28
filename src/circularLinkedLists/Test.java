@@ -19,10 +19,8 @@ public class Test {
 		
 		list.printList();
 		
-		SplitLists sl = new SplitLists();
-		sl.split(list);
-		
-		list.printList();
+		JosephusCircle jc = new JosephusCircle();
+		jc.getJosephusPosition(10, 4);
 		
 	}
 }
