@@ -216,17 +216,10 @@ public class BinaryTree {
 
 	// return height recursively
 	public int getHeight2(BinaryTreeNode root) {
-		int leftHeight, rightHeight;
 		if (root == null) {
 			return 0;
 		} else {
-			leftHeight = getHeight2(root.getLeft());
-			rightHeight = getHeight2(root.getRight());
-
-			if (leftHeight > rightHeight)
-				return (leftHeight + 1);
-			else
-				return (rightHeight + 1);
+			return (1 + Math.max(getHeight2(root.getLeft()), getHeight2(root.getRight())));
 		}
 	}
 }
