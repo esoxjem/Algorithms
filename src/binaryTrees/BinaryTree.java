@@ -77,32 +77,39 @@ public class BinaryTree {
 
 	// non recursive post order traversal
 	public void postOrder2(BinaryTreeNode root) {
-		if (root == null) {
-			return;
-		}
+		BinaryTreeNode cur = root;
+		BinaryTreeNode pre = root;
+		Stack<BinaryTreeNode> s = new Stack<BinaryTreeNode>();
 
-		Stack<BinaryTreeNode> stack = new Stack<BinaryTreeNode>();
+		if (root != null)
+			s.push(root);
 
-		while (true) {
-			if (root != null) {
-				stack.push(root);
-				root = root.getLeft();
-			} else if (stack.isEmpty()) {
-				break;
-			} else if (stack.peek().getRight() == null) { // if there is no
-															// right child
-				root = stack.pop();
-				System.out.print(root.getData() + " ");
-				if (root == stack.peek().getRight()) { // if returning from
-														// right child
-					System.out.print(stack.peek().getData() + " ");
-					stack.pop();
+		while (!s.isEmpty()) {
+			cur = s.peek();
+			// traversing down the tree
+			if (cur == pre || cur == pre.getLeft() || cur == pre.getRight()) {
+				if (cur.getLeft() != null) {
+					s.push(cur.getLeft());
+				} else if (cur.getRight() != null) {
+					s.push(cur.getRight());
+				}
+				if (cur.getLeft() == null && cur.getRight() == null) {
+					System.out.print(s.pop().getData() + " ");
 				}
 			}
-			if (!stack.isEmpty())
-				root = stack.peek().getRight();
-			else
-				root = null;
+			// traversing up the tree from the left
+			else if (pre == cur.getLeft()) {
+				if (cur.getRight() != null) {
+					s.push(cur.getRight());
+				} else if (cur.getRight() == null) {
+					System.out.print(s.pop().getData() + " ");
+				}
+			}
+			// we are traversing up the tree from the right
+			else if (pre == cur.getRight()) {
+				System.out.print(s.pop().getData() + " ");
+			}
+			pre = cur;
 		}
 	}
 
@@ -125,6 +132,55 @@ public class BinaryTree {
 
 		}
 
+	}
+
+	// insert into tree
+	public void insert(BinaryTreeNode root, int data) {
+		BinaryTreeNode temp, newNode = new BinaryTreeNode(data);
+
+		if (root == null) {
+			root = newNode;
+			return;
+		}
+
+		Queue<BinaryTreeNode> q = new LinkedList<BinaryTreeNode>();
+		q.add(root);
+
+		while (!q.isEmpty()) {
+			temp = q.poll();
+			if (temp.getLeft() == null) { // no left child
+				temp.setLeft(newNode);
+				return;
+			}
+			if (temp.getRight() == null) { // no right child
+				temp.setRight(newNode);
+				return;
+			}
+			q.add(temp.getLeft());
+			q.add(temp.getRight());
+		}
+	}
+
+	// return size of the tree
+	public int treeSize(BinaryTreeNode root) {
+		int size = 0;
+		if (root == null) {
+			return 0;
+		} else {
+			BinaryTreeNode temp;
+			Queue<BinaryTreeNode> q = new LinkedList<BinaryTreeNode>();
+			q.add(root);
+
+			while (!q.isEmpty()) {
+				temp = q.poll();
+				size++;
+				if (temp.getLeft() != null)
+					q.add(temp.getLeft());
+				if (temp.getRight() != null)
+					q.add(temp.getRight());
+			}
+		}
+		return size;
 	}
 
 }
