@@ -6,9 +6,10 @@ public class Test {
 		BinaryTreeNode b = new BinaryTreeNode(2);
 		BinaryTreeNode c = new BinaryTreeNode(3);
 		BinaryTreeNode d = new BinaryTreeNode(4);
-		BinaryTreeNode e = new BinaryTreeNode(99);
+		BinaryTreeNode e = new BinaryTreeNode(5);
 		BinaryTreeNode f = new BinaryTreeNode(6);
 		BinaryTreeNode g = new BinaryTreeNode(7);
+		BinaryTreeNode h = new BinaryTreeNode(8);
 		
 		a.setLeft(b);
 		a.setRight(c);
@@ -19,14 +20,12 @@ public class Test {
 		c.setLeft(f);
 		c.setRight(g);
 		
+		g.setLeft(h);
+		
 		BinaryTree tree = new BinaryTree();
 		tree.levelOrder(a);
 		
-		tree.insert(a, 101);
-		System.out.println();
+		System.out.println("\nheight: " + tree.getHeight2(a));
 		
-		tree.levelOrder(a);
-		
-		System.out.println("\nsize: " + tree.treeSize(a));
 	}
 }

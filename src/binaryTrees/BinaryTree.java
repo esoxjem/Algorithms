@@ -183,4 +183,61 @@ public class BinaryTree {
 		return size;
 	}
 
+	// returns height
+	public int getHeight(BinaryTreeNode root) {
+
+		if (root == null) {
+			return 0;
+		} else {
+			Queue<BinaryTreeNode> q = new LinkedList<BinaryTreeNode>();
+			BinaryTreeNode temp;
+
+			q.add(root);
+			int height = 0;
+			q.add(null); // marks end of first level
+
+			while (!q.isEmpty()) {
+				temp = q.poll();
+
+				if (temp == null) {
+					if (!q.isEmpty())
+						q.add(null); // marker for next level
+					height++;
+				} else {
+					if (temp.getLeft() != null)
+						q.add(temp.getLeft());
+					if (temp.getRight() != null)
+						q.add(temp.getRight());
+				}
+			}
+			return height;
+		}
+	}
+
+	// return height recursively
+	public int getHeight2(BinaryTreeNode root) {
+		int leftHeight, rightHeight;
+		if (root == null) {
+			return 0;
+		}
+		else {
+			leftHeight = getHeight2(root.getLeft());
+			rightHeight = getHeight2(root.getRight());
+			
+			if(leftHeight > rightHeight)
+				return (leftHeight + 1);
+			else
+				return (rightHeight + 1);
+		}
+
+	}
+	
+	// deletes node by replacing with deepest node
+	public void deleteNode(BinaryTreeNode root, int data){
+		if(root == null){
+			return;
+		}
+		Queue<BinaryTreeNode> q = new LinkedList<BinaryTreeNode>();
+		BinaryTreeNode temp;
+	}
 }
