@@ -219,25 +219,14 @@ public class BinaryTree {
 		int leftHeight, rightHeight;
 		if (root == null) {
 			return 0;
-		}
-		else {
+		} else {
 			leftHeight = getHeight2(root.getLeft());
 			rightHeight = getHeight2(root.getRight());
-			
-			if(leftHeight > rightHeight)
+
+			if (leftHeight > rightHeight)
 				return (leftHeight + 1);
 			else
 				return (rightHeight + 1);
 		}
-
-	}
-	
-	// deletes node by replacing with deepest node
-	public void deleteNode(BinaryTreeNode root, int data){
-		if(root == null){
-			return;
-		}
-		Queue<BinaryTreeNode> q = new LinkedList<BinaryTreeNode>();
-		BinaryTreeNode temp;
 	}
 }
