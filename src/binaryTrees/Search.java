@@ -27,4 +27,23 @@ public class Search {
 
 		return false;
 	}
+
+	// finds element using recursion
+	public boolean searchRecursive(BinaryTreeNode root, int data) {
+		if (root == null) {
+			return false;
+		} else {
+			if(root.getData() == data){
+				return true;
+			}
+			else if(searchRecursive(root.getLeft(), data)){
+				return true;
+			}
+			else{
+				return searchRecursive(root.getRight(), data);
+			}
+		}
+
+	}
+
 }
