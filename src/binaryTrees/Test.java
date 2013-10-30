@@ -26,7 +26,7 @@ public class Test {
 		tree.levelOrder(a);
 		
 		System.out.println();
-		DeepestNode dn = new DeepestNode();
-		System.out.println(dn.findDeepestNode(a).getData());
+		NumberOfLeaves n = new NumberOfLeaves();
+		System.out.println(n.findNumberOfLeaves(a));
 	}
 }
