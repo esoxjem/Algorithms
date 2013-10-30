@@ -26,9 +26,7 @@ public class Test {
 		tree.levelOrder(a);
 		
 		System.out.println();
-		tree.reverseLevelOrder(a);
-		
-		
-		
+		DeepestNode dn = new DeepestNode();
+		System.out.println(dn.findDeepestNode(a).getData());
 	}
 }
