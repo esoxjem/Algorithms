@@ -115,8 +115,10 @@ public class BinaryTree {
 
 	// level order traversal
 	public void levelOrder(BinaryTreeNode root) {
-		if (root == null)
+		if (root == null) {
+			System.out.println("empty tree");
 			return;
+		}
 
 		Queue<BinaryTreeNode> level = new LinkedList<BinaryTreeNode>();
 		level.add(root);
@@ -182,14 +184,14 @@ public class BinaryTree {
 		}
 		return size;
 	}
-	
+
 	// returns size recursively
-	public int treeSizeRecursive(BinaryTreeNode root){
-		if(root == null){
+	public int treeSizeRecursive(BinaryTreeNode root) {
+		if (root == null) {
 			return 0;
-		}
-		else{
-			return (treeSizeRecursive(root.getLeft()) + 1 + treeSizeRecursive(root.getRight()));
+		} else {
+			return (treeSizeRecursive(root.getLeft()) + 1 + treeSizeRecursive(root
+					.getRight()));
 		}
 	}
 
@@ -229,7 +231,22 @@ public class BinaryTree {
 		if (root == null) {
 			return 0;
 		} else {
-			return (1 + Math.max(getHeight2(root.getLeft()), getHeight2(root.getRight())));
+			return (1 + Math.max(getHeight2(root.getLeft()),
+					getHeight2(root.getRight())));
+		}
+	}
+
+	// deletes the tree
+	public void deleteTree(BinaryTreeNode root) {
+		if (root == null) {
+			return;
+		} else {
+			deleteTree(root.getLeft());
+			deleteTree(root.getRight());
+			
+			root.setLeft(null);
+			root.setRight(null);
+			root = null;
 		}
 	}
 }
