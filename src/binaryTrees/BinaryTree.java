@@ -182,6 +182,16 @@ public class BinaryTree {
 		}
 		return size;
 	}
+	
+	// returns size recursively
+	public int treeSizeRecursive(BinaryTreeNode root){
+		if(root == null){
+			return 0;
+		}
+		else{
+			return (treeSizeRecursive(root.getLeft()) + 1 + treeSizeRecursive(root.getRight()));
+		}
+	}
 
 	// returns height
 	public int getHeight(BinaryTreeNode root) {

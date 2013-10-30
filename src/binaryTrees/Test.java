@@ -25,8 +25,7 @@ public class Test {
 		BinaryTree tree = new BinaryTree();
 		tree.levelOrder(a);
 		
-		Search s = new Search();
-		System.out.println(s.searchRecursive(a, 1));
+		System.out.println("\nsize: " + tree.treeSizeRecursive(a));
 		
 	}
 }
