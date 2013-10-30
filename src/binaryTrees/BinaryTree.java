@@ -136,6 +136,33 @@ public class BinaryTree {
 
 	}
 
+	// level order in reverse
+	public void reverseLevelOrder(BinaryTreeNode root){
+		if(root == null){
+			return;
+		}
+		Queue<BinaryTreeNode> q = new LinkedList<BinaryTreeNode>();
+		BinaryTreeNode temp;
+		Stack<BinaryTreeNode> s = new Stack<BinaryTreeNode>();
+		
+		q.add(root);
+		
+		while(!q.isEmpty()){
+			temp = q.poll();
+			s.push(temp);
+			if(temp.getLeft() != null){
+				q.add(temp.getLeft());
+			}
+			if(temp.getRight() != null){
+				q.add(temp.getRight());
+			}
+		}
+		
+		while(!s.isEmpty()){
+			System.out.print(s.pop().getData() + " ");
+		}
+	}
+	
 	// insert into tree
 	public void insert(BinaryTreeNode root, int data) {
 		BinaryTreeNode temp, newNode = new BinaryTreeNode(data);
@@ -243,7 +270,8 @@ public class BinaryTree {
 		} else {
 			deleteTree(root.getLeft());
 			deleteTree(root.getRight());
-			
+
+			// handled by GC
 			root.setLeft(null);
 			root.setRight(null);
 			root = null;
