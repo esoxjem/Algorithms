@@ -7,8 +7,8 @@ public class Diameter {
 		if(root == null){
 			return 0;
 		}
-		left = diameterOfTree(root.getLeft(), diameter);
-		right = diameterOfTree(root.getRight(), diameter);
+		left = diameterOfTree(root.getLeft(), diameter); //diameter of left sub-tree
+		right = diameterOfTree(root.getRight(), diameter); //diameter of right sub-tree
 		if(left + right > diameter){
 			diameter = left + right;
 		}
