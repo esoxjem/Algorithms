@@ -21,7 +21,7 @@ public class Test {
 
 
 		BinaryTree tree = new BinaryTree();
-		tree.levelOrder(a);
+		tree.preOrder(a);
 
 	
 		
