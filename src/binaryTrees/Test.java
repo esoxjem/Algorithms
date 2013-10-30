@@ -26,8 +26,8 @@ public class Test {
 	
 		
 		System.out.println();
-		Diameter di = new Diameter();
-		System.out.println(di.diameterOfTree(a, 0));
+		LevelWithMaxSum lwms = new LevelWithMaxSum();
+		System.out.println(lwms.findLevelWithMaxSum(a));
 
 	}
 }
