@@ -9,7 +9,7 @@ public class Test {
 		BinaryTreeNode e = new BinaryTreeNode(5);
 		BinaryTreeNode f = new BinaryTreeNode(6);
 		BinaryTreeNode g = new BinaryTreeNode(7);
-		BinaryTreeNode h = new BinaryTreeNode(8);
+		
 
 		a.setLeft(b);
 		a.setRight(c);
@@ -17,15 +17,16 @@ public class Test {
 		b.setRight(e);
 		c.setLeft(f);
 		c.setRight(g);
-		g.setLeft(h);
+		
 
 
 		BinaryTree tree = new BinaryTree();
 		System.out.println("level order:");
-		tree.preOrder(a);
+		tree.levelOrder(a);
 		
 		System.out.println();
-		PathWithGivenSum p = new PathWithGivenSum();
-		System.out.println(p.findPathWithGivenSum(a, 7));
+		ConvertToMirror cm = new ConvertToMirror();
+		BinaryTreeNode root = cm.mirror(a);
+		tree.levelOrder(root);
 	}
 }
