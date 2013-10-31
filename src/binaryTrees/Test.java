@@ -25,7 +25,7 @@ public class Test {
 		tree.levelOrder(a);
 		
 		System.out.println();
-		PrintAllAncestors pa = new PrintAllAncestors();
-		pa.printAllAncestors(a, 7);
+		LCA l = new LCA();
+		System.out.println(l.getLCA(a, f, g).getData());
 	}
 }
