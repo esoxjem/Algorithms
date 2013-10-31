@@ -23,8 +23,6 @@ public class Test {
 		BinaryTree tree = new BinaryTree();
 		System.out.println("level order:");
 		tree.preOrder(a);
-
-	
 		
 		System.out.println();
 		PrintRootToLeaf pr = new PrintRootToLeaf();
