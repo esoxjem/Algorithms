@@ -25,11 +25,7 @@ public class Test {
 		tree.levelOrder(a);
 		
 		System.out.println();
-		Mirror cm = new Mirror();
-		cm.mirror(a);
-		tree.levelOrder(a);
-		
-		System.out.println();
-		
+		PrintAllAncestors pa = new PrintAllAncestors();
+		pa.printAllAncestors(a, 7);
 	}
 }
