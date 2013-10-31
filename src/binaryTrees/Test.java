@@ -21,13 +21,13 @@ public class Test {
 
 
 		BinaryTree tree = new BinaryTree();
+		System.out.println("level order:");
 		tree.preOrder(a);
 
 	
 		
 		System.out.println();
-		LevelWithMaxSum lwms = new LevelWithMaxSum();
-		System.out.println(lwms.findLevelWithMaxSum(a));
-
+		PrintRootToLeaf pr = new PrintRootToLeaf();
+		pr.printPaths(a);
 	}
 }
