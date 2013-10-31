@@ -25,7 +25,7 @@ public class Test {
 		tree.preOrder(a);
 		
 		System.out.println();
-		PrintRootToLeaf pr = new PrintRootToLeaf();
-		pr.printPaths(a);
+		PathWithGivenSum p = new PathWithGivenSum();
+		System.out.println(p.findPathWithGivenSum(a, 7));
 	}
 }
