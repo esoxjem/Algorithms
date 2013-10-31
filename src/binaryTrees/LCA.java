@@ -6,12 +6,14 @@ public class LCA {
 			BinaryTreeNode b) {
 		BinaryTreeNode left, right;
 
+		// base case
 		if (root == null) {
 			return root;
 		}
 		if (root == a || root == b) {
 			return root;
 		}
+		
 		left = getLCA(root.getLeft(), a, b);
 		right = getLCA(root.getRight(), a, b);
 
