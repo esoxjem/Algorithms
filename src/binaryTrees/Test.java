@@ -25,7 +25,7 @@ public class Test {
 		tree.levelOrder(a);
 		
 		System.out.println();
-		LCA l = new LCA();
-		System.out.println(l.getLCA(a, f, g).getData());
+		ZigZag z = new ZigZag();
+		z.zigZagTraversal(a);
 	}
 }
