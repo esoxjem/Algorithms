@@ -25,8 +25,11 @@ public class Test {
 		tree.levelOrder(a);
 		
 		System.out.println();
-		ConvertToMirror cm = new ConvertToMirror();
-		BinaryTreeNode root = cm.mirror(a);
-		tree.levelOrder(root);
+		Mirror cm = new Mirror();
+		cm.mirror(a);
+		tree.levelOrder(a);
+		
+		System.out.println();
+		
 	}
 }
