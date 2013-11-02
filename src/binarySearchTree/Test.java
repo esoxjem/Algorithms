@@ -6,18 +6,22 @@ public class Test {
 		BST tree = new BST();
 
 		BSTNode root = new BSTNode(6);
+		BSTNode a = new BSTNode(2);
+		BSTNode b = new BSTNode(8);
+		BSTNode c = new BSTNode(1);
+		BSTNode d = new BSTNode(5);
 		
 		tree.insertIterative(root, 2);
-		tree.insertIterative(root, 8);
-		tree.insert(root, 1);
-		tree.insert(root, 5);
+		root.setLeft(a);
+		root.setRight(b);
+		a.setLeft(c);
+		a.setRight(d);
 		
 		System.out.println("inOrder:");
-		tree.inOrder(root);
+		tree.preOrder(root);
 		
-		tree.remove(root, 6);
-		
-		System.out.println("\nafter removal:");
-		tree.inOrder(root);
+		LCA l = new LCA();
+		System.out.println("\nLCA:");
+		System.out.println(l.findLCA(root, c, d).getData());
 	}
 }
