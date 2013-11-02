@@ -22,6 +22,6 @@ public class Test {
 		
 		LCA l = new LCA();
 		System.out.println("\nLCA:");
-		System.out.println(l.findLCA(root, c, d).getData());
+		System.out.println(l.findLCA(root, d, b).getData());
 	}
 }
