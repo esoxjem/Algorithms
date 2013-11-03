@@ -18,10 +18,10 @@ public class Test {
 		a.setRight(d);
 		
 		System.out.println("inOrder:");
-		tree.preOrder(root);
+		tree.inOrder(root);
 		
-		LCA l = new LCA();
-		System.out.println("\nLCA:");
-		System.out.println(l.findLCA(root, d, b).getData());
+		System.out.println("\nis BST:");
+		IsBST is = new IsBST();
+		System.out.println(is.isBST(root));
 	}
 }
