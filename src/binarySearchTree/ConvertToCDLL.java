@@ -42,7 +42,7 @@ public class ConvertToCDLL {
 		// base case
 		if(root == null) return null;
 		
-		// recursively do the subtrees
+		// recursively do the subtrees(leap of faith)
 		BSTNode left = treeToList(root.getLeft());
 		BSTNode right = treeToList(root.getRight());
 		
