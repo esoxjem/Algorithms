@@ -7,6 +7,7 @@ public class Test {
 		DLLNode b = new DLLNode(2);
 		DLLNode c = new DLLNode(3);
 		DLLNode d = new DLLNode(4);
+		DLLNode e = new DLLNode(5);
 		
 		DoublyLinkedList list = new DoublyLinkedList();
 		
@@ -14,10 +15,19 @@ public class Test {
 		list.insertAtHead(a);
 		list.insertAtEnd(d);
 		list.insertInList(c, 3);
+		list.insertAtEnd(e);
 		
-		list.deleteFromMiddle(4);
+		
 		
 		list.printList();
+		System.out.println();
+		
+		DLLToBST dbs = new DLLToBST();
+		dbs.convertTotree(a);
+		
+		System.out.println(c.getData());
+		System.out.println(c.getPrevious().getData() + " " + c.getNext().getData());
+		System.out.println(c.getNext().getPrevious().getData());
 		
 	}
 }
