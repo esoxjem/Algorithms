@@ -20,8 +20,9 @@ public class Test {
 		System.out.println("inOrder:");
 		tree.inOrder(root);
 		
-		System.out.println("\nis BST:");
-		IsBST is = new IsBST();
-		System.out.println(is.isBST(root));
+		System.out.println("\nBST to CDLL");
+		ConvertToCDLL cll= new ConvertToCDLL();
+		BSTNode head = cll.treeToList(root);
+		cll.printList(head);	
 	}
 }
