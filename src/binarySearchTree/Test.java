@@ -20,9 +20,8 @@ public class Test {
 		System.out.println("inOrder:");
 		tree.inOrder(root);
 		
-		System.out.println("\nBST to CDLL");
-		ConvertToCDLL cll= new ConvertToCDLL();
-		BSTNode head = cll.treeToList(root);
-		cll.printList(head);	
+		System.out.println("\nkth smallest element:");
+		KthSmallestElement k = new KthSmallestElement();
+		k.findKthSmallestElement(root, 2);
 	}
 }
