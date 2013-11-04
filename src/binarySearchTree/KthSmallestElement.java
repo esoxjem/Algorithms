@@ -6,7 +6,8 @@ import java.util.Queue;
 public class KthSmallestElement {
 
 	void findKthSmallestElement(BSTNode root, int k) {
-		Queue<BSTNode> q = new LinkedList<BSTNode>();
+		//use queue to find kth smallest and stack to find kth largest
+		Queue<BSTNode> q = new LinkedList<BSTNode>(); 
 		findKthSmallestElement(root, k, q);
 		BSTNode temp;
 		while(!q.isEmpty()){
