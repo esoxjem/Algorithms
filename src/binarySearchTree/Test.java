@@ -20,8 +20,8 @@ public class Test {
 		System.out.println("inOrder:");
 		tree.inOrder(root);
 		
-		System.out.println("\nkth smallest element:");
-		KthSmallestElement k = new KthSmallestElement();
-		k.findKthSmallestElement(root, 2);
+		System.out.println("\nFloor:");
+		Floor fl = new Floor();
+		System.out.println(fl.floorInBST(root, 1));
 	}
 }
