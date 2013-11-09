@@ -13,9 +13,11 @@ public class SelectionSort {
 				}
 			}
 			// swap elements
-			temp = arr[min];
-			arr[min] = arr[i];
-			arr[i] = temp;
+			if(min != i){
+				temp = arr[min];
+				arr[min] = arr[i];
+				arr[i] = temp;
+			}
 		}
 	}
 }
