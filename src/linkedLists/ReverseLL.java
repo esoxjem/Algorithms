@@ -10,7 +10,7 @@ public class ReverseLL {
 			prev = current;
 			current = next;
 		}
-		list.setHead(prev);
+		list.setHead(prev); // update head
 		return list;
 	}
 }
