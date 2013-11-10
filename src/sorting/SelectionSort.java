@@ -5,7 +5,7 @@ public class SelectionSort {
 	void selectionSort(int[] arr) {
 		int size = arr.length;
 		int min, temp, i, j;
-		for (i = 0; i < size - 1; i++) {
+		for (i = 0; i < size - 1; i++) { // till second last element
 			min = i;
 			for (j = i + 1; j < size; j++) {
 				if (arr[min] > arr[j]) {
