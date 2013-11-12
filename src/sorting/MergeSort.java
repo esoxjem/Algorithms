@@ -30,7 +30,7 @@ public class MergeSort {
 
 		int i = 0, j = 0, k = 0;
 		while (i < nL && j < nR) {
-			if (left[i] <= right[i]) {
+			if (left[i] <= right[j]) {
 				arr[k] = left[i];
 				k++;
 				i++;
