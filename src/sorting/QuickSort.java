@@ -26,7 +26,7 @@ public class QuickSort {
 				pIndex++;
 			}
 		}
-		// move pivot to partition index
+		// swap pivot and partition index
 		temp = arr[pIndex];
 		arr[pIndex] = arr[end];
 		arr[end] = temp;
