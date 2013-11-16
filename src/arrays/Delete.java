@@ -7,7 +7,7 @@ public class Delete {
 			for (int i = index; i < arr.length - 1; i++) { // n-1th index
 				arr[i] = arr[i + 1];
 			}
-			arr[arr.length - 1] = 0;
+			arr[arr.length - 1] = -1;
 		}
 	}
 }

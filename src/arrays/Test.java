@@ -3,12 +3,9 @@ package arrays;
 public class Test {
 
 	public static void main(String[] args) {
-
-		int[] arr = { 2, 3, 1, 4, 8, 2, 9, 7 };
-
-		LinearSearch ls = new LinearSearch();
-		System.out.println(ls.linearSearch(arr, 2));
-
+		Delete d = new Delete();
+		int[] arr = { 5, 3, 1, 4, 8, 2, 9, 7 };
+		d.delete(arr, 6);
 		for (int i : arr) {
 			System.out.print(i + " ");
 		}
