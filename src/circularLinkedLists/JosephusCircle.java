@@ -3,24 +3,24 @@ package circularLinkedLists;
 public class JosephusCircle {
 
 	// elect leader by eliminating every Kth person from the circle
-	LLNode josephusPosition(LLNode head, int k)
+	CLLNode josephusPosition(CLLNode head, int k)
 	{
-		LLNode prev = null, current = head, next = null;
+		CLLNode prev = null, current = head, next = null;
 		k--;
 	
-		while(current != current.next)
+		while(current != current.getNext())
 		{	
 			int count = k;
 			while(count!=0)
 			{
 				prev = current;
-				current = current.next;
+				current = current.getNext();
 				count--;
 			}		
 					
-			next = current.next;
-			prev.next = next;
-			current.next = null;
+			next = current.getNext();
+			prev.setNext(next);
+			current.setNext(null);
 			current = next;	
 		}
 		

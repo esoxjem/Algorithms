@@ -20,7 +20,7 @@ public class Test {
 		list.printList();
 		
 		JosephusCircle jc = new JosephusCircle();
-		jc.getJosephusPosition(7, 3);
+		System.out.println("Josephus position: " + jc.josephusPosition(a, 3).getData());
 		
 	}
 }
