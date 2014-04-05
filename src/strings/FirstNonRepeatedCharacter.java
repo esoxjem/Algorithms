@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class FirstNonRepeatedCharacter {
 
-	// unicode
+	// unicode char set
 	public static String firstNonRepeatedUnicodeCharacter(String str) {
 
 		int cp, i;
@@ -38,8 +38,35 @@ public class FirstNonRepeatedCharacter {
 		return null;
 	}
 	
+	//ASCII char set
+	public static String firstNonRepeatedASCIICharacter(String str){
+		
+		char c;
+		int i, length = str.length();
+		int count[] = new int[128];
+		
+		for(i = 0; i < length; i++){
+			c = str.charAt(i);
+			if(count[c] == 0){
+				count[c] = 1;
+			} else {
+				count[c] += 1;
+			}
+		}
+		
+		for(i = 0; i < length; i++){
+			c = str.charAt(i);
+			if(count[c] == 1){
+				return new String(Character.toString(c));
+			}
+		}	
+		return null;
+	}
+	
+	
 	public static void main(String[] args) {
 		String str = "supercalifragilisticexpialidocious";
-		System.out.println("first non rep char: " + firstNonRepeatedUnicodeCharacter(str));
+		System.out.println("first non rep unicode char: " + firstNonRepeatedUnicodeCharacter(str));
+		System.out.println("first non rep ASCII char: " + firstNonRepeatedASCIICharacter(str));
 	}
 }
