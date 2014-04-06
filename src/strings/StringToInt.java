@@ -2,6 +2,7 @@ package strings;
 
 public class StringToInt {
 
+	//Using Horner's rule
 	public static int stringToInt(String str) {
 		int length = str.length();
 		int num = 0, i = 0;
