@@ -1,5 +1,6 @@
 package ds.list;
 
+import algos.list.Node;
 import org.junit.Assert;
 import org.junit.Test;
 

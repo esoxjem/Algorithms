@@ -1,11 +1,13 @@
 package ds.list;
 
+import algos.list.Node;
+
 /**
  * @author arunsasidharan
  */
 public class LinkedList {
 
-    Node head;
+    public Node head;
 
     public LinkedList(Node head) {
         checkNull(head);

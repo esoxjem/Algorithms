@@ -1,4 +1,6 @@
-package ds.list;
+package algos.list;
+
+import ds.list.LinkedList;
 
 public class MergedLL {
 

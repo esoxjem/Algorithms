@@ -1,6 +1,6 @@
 package ds.binarySearchTree;
 
-import ds.list.Node;
+import algos.list.Node;
 
 public class LinkedListToBST {
 	

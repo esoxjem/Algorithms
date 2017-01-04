@@ -1,4 +1,4 @@
-package ds.list;
+package algos.list;
 
 public class PrintReverse {
 
