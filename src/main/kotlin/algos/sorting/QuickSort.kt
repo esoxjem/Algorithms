@@ -1,5 +1,9 @@
 package algos.sorting
 
+/**
+ * Dr. Rob Edwards - San Diego State University
+ * https://www.youtube.com/watch?v=ZHVk2blR45Q
+ */
 class QuickSort {
 
     fun sort(array: Array<Int>) {
