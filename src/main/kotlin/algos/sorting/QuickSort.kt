@@ -32,7 +32,6 @@ class QuickSort {
         }
 
         swap(array, pi, counter)
-
         return pi
     }
 
@@ -44,7 +43,7 @@ class QuickSort {
 }
 
 fun main(args: Array<String>) {
-    val arr = arrayOf(4, 1, 7, 9, 2, 3)
+    val arr = arrayOf(4, 1, 6, 5, 2, 3)
     log(arr)
 
     QuickSort().sort(arr)
