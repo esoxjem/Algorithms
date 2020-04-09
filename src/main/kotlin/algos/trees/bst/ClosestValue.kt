@@ -10,7 +10,7 @@ class ClosestValue {
 
     /**
      * Time: O(log(n))
-     * Space: O(log(n))
+     * Space: O(log(n)) : stack memory used by recursion
      */
     fun findClosest(tree: BST, target: Int): Int {
         return find(tree, closestValue = Int.MAX_VALUE, target = target)
@@ -35,13 +35,17 @@ class ClosestValue {
         }
     }
 
+    /**
+     * Time: O(log(n))
+     * Space: O(1)
+     */
     fun findClosestIterative(tree: BST, target: Int): Int {
         var closest =  Int.MAX_VALUE
-
         var curr: BST? = tree
+
         while (curr != null) {
-            val smallestDiff = (target - closest).absoluteValue
             val diff = (target - curr.value).absoluteValue
+            val smallestDiff = (target - closest).absoluteValue
 
             if (diff <= smallestDiff) {
                 closest = curr.value
