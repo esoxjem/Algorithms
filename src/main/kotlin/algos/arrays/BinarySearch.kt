@@ -2,6 +2,10 @@ package algos.arrays
 
 class BinarySearch {
 
+    /**
+     * Time: O(log(n))
+     * Space: O(log(n))
+     */
     fun search(arr: Array<Int>, target: Int): Int {
         return search(arr, 0, arr.lastIndex, target)
     }
@@ -19,6 +23,10 @@ class BinarySearch {
         }
     }
 
+    /**
+     * time: O(log(n))
+     * space: O(1)
+     */
     fun searchIterative(arr: Array<Int>, target: Int): Int {
         var left = 0
         var right = arr.lastIndex
