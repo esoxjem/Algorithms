@@ -25,10 +25,9 @@ class TheeLargestNumbers {
     }
 
     private fun shiftLeft(array: Array<Int>, num: Int, index: Int) {
-        array.forEach { i ->
+        (0..index).forEach { i ->
             if (i == index) {
                 array[i] = num
-                return
             } else {
                 array[i] = array[i + 1]
             }
