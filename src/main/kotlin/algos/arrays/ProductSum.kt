@@ -21,23 +21,23 @@ import java.util.*
  */
 class ProductSum {
 
-    fun productSumHelper(list: List<Any>): Int {
-        return productSumHelper(list, 1)
-    }
-
-    private fun productSumHelper(list: List<Any>, accumulator: Int): Int {
+    /**
+     * Time: O(n)
+     * Space: O(depth)
+     */
+    fun productSumHelper(list: List<*>, depth: Int = 1): Int {
         var sum = 0
 
         list.forEach { item ->
-            if(item is Int) {
+            if (item is Int) {
                 sum += item
             } else {
-                val inner = item as List<Int>
-                sum += productSumHelper(inner, accumulator + 1)
+                val inner = item as List<*>
+                sum += productSumHelper(inner, depth + 1)
             }
         }
 
-        return sum * accumulator
+        return sum * depth
     }
 }
 
