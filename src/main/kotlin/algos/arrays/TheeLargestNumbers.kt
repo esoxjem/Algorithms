@@ -2,6 +2,10 @@ package algos.arrays
 
 class TheeLargestNumbers {
 
+    /**
+     * time: O(n)
+     * space: O(1)
+     */
     fun findThreeLargest(array: Array<Int>): Array<Int> {
         val result = arrayOf(Int.MIN_VALUE, Int.MIN_VALUE, Int.MIN_VALUE)
 
@@ -21,9 +25,10 @@ class TheeLargestNumbers {
     }
 
     private fun shiftLeft(array: Array<Int>, num: Int, index: Int) {
-        (0..index).forEach { i ->
+        array.forEach { i ->
             if (i == index) {
                 array[i] = num
+                return
             } else {
                 array[i] = array[i + 1]
             }
