@@ -27,9 +27,9 @@ class BinarySearch {
     fun searchIterative(arr: Array<Int>, target: Int): Int {
         var left = 0
         var right = arr.lastIndex
-        var mid = (left + right) / 2
-
+        
         while (left <= right) {
+            val mid = (left + right) / 2
             if (arr[mid] == target) {
                 return mid
             }
@@ -39,8 +39,6 @@ class BinarySearch {
             } else {
                 right = mid - 1
             }
-
-            mid = (left + right) / 2
         }
 
         return -1
