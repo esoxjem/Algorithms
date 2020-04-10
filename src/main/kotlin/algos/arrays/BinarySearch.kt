@@ -3,10 +3,10 @@ package algos.arrays
 class BinarySearch {
 
     fun search(arr: Array<Int>, target: Int): Int {
-        return binary(arr, 0, arr.lastIndex, target)
+        return search(arr, 0, arr.lastIndex, target)
     }
 
-    private fun binary(arr: Array<Int>, start: Int, end: Int, target: Int): Int {
+    private fun search(arr: Array<Int>, start: Int, end: Int, target: Int): Int {
         val mid = (start + end) / 2
 
         if (start > end) {
@@ -18,9 +18,9 @@ class BinarySearch {
         }
 
         return if (mid < target) {
-            binary(arr, mid + 1, end, target)
+            search(arr, mid + 1, end, target)
         } else {
-            binary(arr, start, mid - 1, target)
+            search(arr, start, mid - 1, target)
         }
     }
 
