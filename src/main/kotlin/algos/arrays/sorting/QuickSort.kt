@@ -1,4 +1,4 @@
-package algos.sorting
+package algos.arrays.sorting
 
 /**
  * Dr. Rob Edwards - San Diego State University
