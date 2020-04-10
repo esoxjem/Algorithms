@@ -1,7 +1,5 @@
 package algos.arrays
 
-import algos.sorting.log
-import java.util.*
 import kotlin.collections.HashMap
 
 /**

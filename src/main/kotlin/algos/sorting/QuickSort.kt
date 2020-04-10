@@ -44,14 +44,10 @@ class QuickSort {
 
 fun main(args: Array<String>) {
     val arr = arrayOf(4, 1, 6, 5, 2, 3)
-    log(arr)
+    println(arr.contentToString())
 
     QuickSort().sort(arr)
 
     println("\nsorted:")
-    log(arr)
-}
-
-fun log(array: Array<Int>) {
-    array.forEach { print(it) }
+    println(arr.contentToString())
 }

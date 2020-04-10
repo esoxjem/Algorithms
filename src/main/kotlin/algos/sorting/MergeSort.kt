@@ -57,10 +57,10 @@ class MergeSort {
 
 fun main(args: Array<String>) {
     val arr = arrayOf(4, 1, 6, 5, 2, 3)
-    log(arr)
+    println(arr.contentToString())
 
     MergeSort().sort(arr)
 
     println("\nsorted:")
-    log(arr)
+    println(arr.contentToString())
 }
