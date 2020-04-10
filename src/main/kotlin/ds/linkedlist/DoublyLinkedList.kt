@@ -199,13 +199,16 @@ fun main(args: Array<String>) {
     println("List:")
     dll.print()
 
-    println("\nRemove 3 and 1:")
+    println("\nRemove 3:")
     dll.remove(node3)
+    dll.print()
+
+    println("\nRemove 1:")
     dll.removeNodesWithValue(1)
     dll.print()
 
-    println("contains 3: " + dll.containsNodeWithValue(3))
-    println("contains 1: " + dll.containsNodeWithValue(1))
+    println("\ncontains 3: " + dll.containsNodeWithValue(3))
+    println("contains 5: " + dll.containsNodeWithValue(5))
 
     println("\nInsert 1 before 2:")
     dll.insertBefore(node2, node1)
