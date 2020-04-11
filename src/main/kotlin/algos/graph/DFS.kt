@@ -1,6 +1,6 @@
-package algos.trees.tree
+package algos.graph
 
-import ds.tree.TreeNode
+import ds.graph.GraphNode
 
 /**
  * Implement func, which takes in an empty array, traverses the tree
@@ -10,11 +10,11 @@ import ds.tree.TreeNode
  */
 class DFS {
 
-    fun dfs(root: TreeNode<String>, list: MutableList<String>) {
+    fun dfs(root: GraphNode<String>, list: MutableList<String>) {
         fill(root, list)
     }
 
-    private fun fill(node: TreeNode<String>, list: MutableList<String>) {
+    private fun fill(node: GraphNode<String>, list: MutableList<String>) {
         list.add(node.value)
 
         node.children.forEach { child ->
@@ -26,7 +26,7 @@ class DFS {
 
 fun main(args: Array<String>) {
 
-    val tree = TreeNode("A")
+    val tree = GraphNode("A")
     tree.addChild("B").addChild("C").addChild("D")
     tree.children[0].addChild("E").addChild("F")
     tree.children[2].addChild("G").addChild("H")
