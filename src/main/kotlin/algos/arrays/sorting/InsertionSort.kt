@@ -10,8 +10,10 @@ class InsertionSort {
             while (j > 0) {
                 if (array[j] < array[j - 1]) {
                     swap(array, j, j - 1)
+                    j--
+                } else {
+                    break
                 }
-                j--
             }
         }
 
