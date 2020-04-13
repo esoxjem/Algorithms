@@ -10,7 +10,7 @@ import kotlin.collections.HashMap
  * order. If no two numbers sum up to the target sum, the function should return
  * an empty array.
  */
-class TargetSum {
+class TwoNumberSum {
 
     /**
      * Space: O(n)
@@ -34,7 +34,7 @@ class TargetSum {
 }
 
 fun main(args: Array<String>) {
-    val test = TargetSum()
+    val test = TwoNumberSum()
     val arr = arrayOf(1, 5, 7, 9, 11)
     val target = 10
 
